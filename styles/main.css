@@ -1,0 +1,108 @@
+/* Import Google Font: Roboto using google for help*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset basics */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+
+/* Global font */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: black;
+}
+
+/* Header styling */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(41, 37, 37);
+    color: white;
+    padding: 0.75em 1em;
+    position: relative;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    font-weight: 700; 
+}
+
+/* Navigation */
+.site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #353434;
+    width: 200px;
+}
+
+.site-nav ul li {
+    border-bottom: 1px solid #413f3f;
+}
+
+.site-nav ul li a {
+    display: block;
+    padding: 0.75em;
+    color: white;
+    text-decoration: none;
+    font-weight: 400; 
+}
+
+.site-nav ul li a:hover {
+    background-color: #343232;
+}
+
+/* Menu button */
+.menu-toggle {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Show nav when active */
+.site-nav.active {
+    display: block;
+}
+
+/* Desktop view or bigger screens */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    .site-nav {
+        display: block;
+        position: static;
+        background: none;
+        width: auto;
+    }
+    .site-nav ul {
+        display: flex;
+        gap: 1em;
+        align-items: center;
+    }
+    .site-nav ul li {
+        border: none;
+    }
+}
+/* Resume Icon Styling           */
+.resume-icon img {
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.resume-icon img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
