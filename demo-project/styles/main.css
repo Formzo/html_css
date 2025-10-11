@@ -1,4 +1,4 @@
- * {
+* {
     max-width: 100%;
     max-height: 100%;
     box-sizing: border-box;
@@ -147,14 +147,250 @@ header nav a {
     color: var(--navy);
 }
 
+#about-us h2 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1.25em;
+}
+
+#about-us img {
+    width: 150px;
+    height: 5px;
+    /* If text-align: center doesn't work, set the display property to block, and use margin: 0 auto instead */
+    margin: 15px auto;
+    display: block;
+}
+#about-us p {
+    font-size: 1.25em;
+    text-align: center;
+    margin: 15px 0;
+    line-height: 1.5em;
+}
+#about-cards article {
+    margin: 25px 0;
+}
+#about-cards .card-header {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 1em;
+}
+#about-cards .card-header i {
+    color: var(--blue);
+    font-size: 1.5em;
+}
+#about-cards .card-header h3 {
+    font-size: 1.25em;
+}
+#about-cards blockquote {
+    border-left: 2px solid #ccc;
+    padding-left: 20px; /* separation between border and contents */
+    margin-left: 15px; /* Space outside of the border */
+    font-size: 1.1em;
+    line-height: 1.25em;
+    color: #555;
+}
 
 
 
+.parallax {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    background-image: url('https://www.lynchdallas.com/application/files/7515/9231/1199/feature-full.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .parallax-text {
+    z-index: 1;
+    background-image: url("https://www.lynchdallas.com/application/themes/lynchdallas/img/bkg-pattern.jpg");
+    padding: 1.5em;
+    width: 80%;
+    border-top: 5px solid var(--blue);
+  }
+  
+  .parallax-text h3 {
+    color: var(--blue);
+    font-size: 2em;
+    font-weight: 400;
+    line-height: 1.25em;
+  }
+  
+  .parallax-text h4 {
+    color: 
+  white;
+    font-size: 1.2em;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 20px 0;
+  }
+  
+  .parallax-text p {
+    color: 
+  white;
+    margin: 1em 0; /* Add space above and below paragraph */
+    line-height: 1.25em;
+  }
+  
+  
+  #footer-contact {
+    padding: 40px 20px;
+  }
+
+  #footer-contact .col {
+    margin: 20px;
+  }
+
+  #footer-contact h3 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  #footer-contact h4 {
+    font-size: 16px;
+    font-family: 'PT Sans', sans-serif;
+    text-transform: uppercase;
+    margin: 10px 0;
+  }
+
+  #footer-contact p {
+    line-height: 20px;
+    margin: 20px 0;
+  }
+
+  #footer-contact a {
+    color: #222;
+    text-decoration: none;
+  }
+
+  #footer-contact table {
+    margin: 20px 0;
+  }
+
+  #footer-contact table th {
+    font-weight: bold;
+  }
+
+  #footer-contact table th, 
+  #footer-contact table td {
+    text-align: left;
+    padding: 8px;
+    padding-left: 0;
+  }
+
+
+  #footer-contact a:hover {
+    text-decoration: underline;
+  }
+
+  #footer-contact .social-icons a {
+    display: inline-block;
+    width: 45px;
+    height:45px;
+    line-height:45px;
+    border-radius: 50px;
+    background-color: var(--blue);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+#footer-contact .social-icons a:hover {
+    background-color: var(--navy);
+    transform: scale(1.2);
+} 
 
 
 
+  #footer-copyright {
+    background-color: #222;
+    color: #999;
+    padding: 24px;
+    text-align: center;
+    font-size: 13px;
+  }
+  
+  #footer-copyright a {
+    color: #999;
+    text-decoration: none;
+  }
+
+  #footer-copyright a:hover {
+    text-decoration: underline;
+   }
 
 
-
-
-
+   #footer-cta {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    position:relative;
+    z-index: 1;
+  }
+  
+  #footer-cta img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: .6;
+    mix-blend-mode: overlay;
+  }
+  
+  #footer-cta h4 {
+    color: var(--blue);
+    text-transform: uppercase;
+    margin: 20px 0;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+  }
+  
+  #footer-cta h2 {
+    font-size: 32px;
+    margin: 20px 0 40px
+  }
+  
+  #footer-cta a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    display: block;
+    margin: 20px 0 0;
+  }
+  
+  #footer-cta a ~ span {
+    display: none;
+  }
+  
+  #footer-cta a:hover {
+    text-decoration: underline;
+  }
+  
+  #footer-cta a span {
+    color: var(--blue);
+  }
+  
+  #footer-cta .btn {
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+  }

@@ -1,4 +1,4 @@
-qro<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -18,8 +18,11 @@ qro<!DOCTYPE html>
         <link rel="shortcut icon" href="images/gavel-solid-full.svg">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script defer src="scripts/main.js"></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script>
+        <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js'></script>
+        <script defer src="scripts/gsap.js"></script>
     </head>
-    <body>
+    <body translate="no">
         <header>
             <div id="header-grid">
                 <div id="header-logo">
@@ -60,7 +63,6 @@ qro<!DOCTYPE html>
                 <h1>Practical. Experienced. Results.</h1>
                 <p>We are committed to providing our clients the best legal representation possible by holding true to our core principles.</p>
                 <a href="#" class="btn">Our Practice Areas</a>
-                <p>Lynch Dallas: Navigating the legal horizons for your city, your county, your business, your employees-OUR EXPERTISE.</p>
             </div>
         </div>
         <main>
@@ -69,6 +71,7 @@ qro<!DOCTYPE html>
                 <h4>About Lynch Dallas Legal</h4>
                 <h2>We deliver. Thoughtful Strategy. Outstanding Results.</h2>
                 <img src="https://www.lynchdallas.com/application/themes/lynchdallas/img/after.png" alt="Decorative border">
+                <p>Lynch Dallas: Navigating the legal horizons for your city, your county, your business, your employees-OUR EXPERTISE.</p>
 
                 <div id="about-cards">
                     <article class="card">
@@ -80,7 +83,7 @@ qro<!DOCTYPE html>
                             Lynch Dallas Legal was founded in 1926, making it one of Iowa's oldest law firms.
                         </blockquote>
                     </article>
-                    <article>
+                    <article class="card">
                         <div class="card-header">
                           <i class="fa-regular fa-handshake"></i>
                           <h3>Commitment</h3>
@@ -89,50 +92,119 @@ qro<!DOCTYPE html>
                           Lynch Dallas Legal has a tradition of commitment to our clients, our community, and the legal profession.
                         </blockquote>
                       </article>
-                      <article>
-                        <div class="card-header">
-                          <i class="fa-solid fa-gavel"></i>
-                          <h3>Results</h3>
-                        </div>
-                        <blockquote>
-                          Lynch Dallas Legal strives to achieve the best results for our clients through careful problem-solving and considering novel approaches.
-                        </blockquote>
-                      </article>
-                      <article>
-                        <div class="card-header">
-                          <i class="fa-solid fa-comments"></i>
-                          <h3>Litigation</h3>
-                        </div>
-                        <blockquote>
-                          Lynch Dallas Legal fosters strong litigation skills in its attorneys to manage cases from district court to various state and federal courts of appeal.
-                        </blockquote>
-                      </article>
-                      <article>
-                        <div class="card-header">
-                          <i class="fa-solid fa-key"></i>
-                          <h3>Principles</h3>
-                        </div>
-                        <blockquote>
-                          Lynch Dallas Legal upholds the integrity, reliability, and trustworthiness of the legal profession.
-                        </blockquote>
-                      </article>
-                      <article>
-                        <div class="card-header">
-                          <i class="fa-solid fa-shield-halved"></i>
-                          <h3>Devoted</h3>
-                        </div>
-                        <blockquote>
-                          Lynch Dallas Legal maintains strong connections to its clients to form lasting relationships.
-                        </blockquote>
-                      </article>
+                    <article class="card">
+                    <div class="card-header">
+                      <i class="fa-solid fa-gavel"></i>
+                      <h3>Results</h3>
+                    </div>
+                    <blockquote>
+                      Lynch Dallas Legal strives to achieve the best results for our clients through careful problem-solving and considering novel approaches.
+                    </blockquote>
+                  </article>
+                    <article class="card">
+                    <div class="card-header">
+                      <i class="fa-solid fa-comments"></i>
+                      <h3>Litigation</h3>
+                    </div>
+                    <blockquote>
+                      Lynch Dallas Legal fosters strong litigation skills in its attorneys to manage cases from district court to various state and federal courts of appeal.
+                    </blockquote>
+                  </article>
+                    <article class="card">
+                    <div class="card-header">
+                      <i class="fa-solid fa-key"></i>
+                      <h3>Principles</h3>
+                    </div>
+                    <blockquote>
+                      Lynch Dallas Legal upholds the integrity, reliability, and trustworthiness of the legal profession.
+                    </blockquote>
+                  </article>
+                    <article class="card">
+                    <div class="card-header">
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <h3>Devoted</h3>
+                    </div>
+                    <blockquote>
+                      Lynch Dallas Legal maintains strong connections to its clients to form lasting relationships.
+                    </blockquote>
+                  </article>
                 </div>
+            </div><!-- Close About Us -->
+
+            <div class="parallax">
+              <div class="parallax-bg"></div>
+              <div class="parallax-text">
+                <h4>Our Attorneys</h4>
+                <h3>Counsel and advice in practically every aspect of law</h3>
+                <p>Our lawyers possess the breadth of experience and depth of understanding to provide thoughtful solutions to our clients' most complex legal issues. We frequently collaborate across practice areas to identify innovative solutions to challenges facing our clients, and pride ourselves on having lawyers who are eager to work together to provide the capabilities our clients need.</p>
+                <a href="#" class="btn">Meet Our Attorneys</a>
+              </div>
             </div>
+
         </main>
         <footer>
-            <b>Hello</b>
-            <b>world</b>
-            <p>Copyright &copy; 2025 Lynch Dallas, P.C. Attorneys At Law. All Rights Reserved. </p>
+          <div id="footer-cta">
+            <img src="https://www.lynchdallas.com/application/files/8316/0676/1270/footer-background.jpg" 
+            alt="The exterior of the Lynch Dallas buidling with a brick facade">
+            <h4>Let's Get Started</h4>
+            <h2>Schedule a Consultation</h2>
+            <a href="#"><span><i class="fa-solid fa-phone"></i></span>319-365-9101</a>
+            <span>or</span> <a href="#" class="btn">Contact Us Today</a>
+          </div>
+          <div id="footer-contact">
+            <div class="col">
+              <h3>Lynch Dallas Legal</h3>
+              <h4>Main Office</h4>
+              <p><a href="https://maps.app.goo.gl/nNXhh8YU7bW9ex6ZA" target="_blank">316 Second St SE Suite 124<br>
+              Cedar Rapids, Iowa 52401</a></p>
+
+              <h4>Satellite Office</h4>
+              <p><a href="https://maps.app.goo.gl/SyQFhkqHRVcAHZ4z8" target="_blank">709 John Drive<br>
+              Monticello, Iowa 52310</a></p>
+            </div>
+            <div class="col">
+              <h3>Contact Us</h3>
+              <table>
+                <tr>
+                  <th>Phone:</th>
+                  <td><a href="tel:319-365-9101">319-365-9101</a></td>
+                </tr>
+                <tr>
+                  <th>Fax:</th>
+                  <td>319-365-9512</td>
+                </tr>
+                <tr>
+                  <th>Email:</th>
+                  <td><a href="mailto:info@lynchdallas.com">info@lynchdallas.com</a></td>
+                </tr>
+              </table>
+            </div>
+            <div class="col">
+              <h3>Connect With Us</h3>
+              <p>Follow us and connect via social media for updates and more.</p>
+              <div class="social-icons">
+                <a href="https://x.com/lynchdallaslaw" target="_blank">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/lynchdallas/" target="_blank">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <h3>About Us</h3>
+              <p>Lynch Dallas Legal offers clients a wealth of experience 
+                and partners with you to address your most urgent priorities. 
+                We represent clients across the state of Iowa.</p>
+            </div>
+          </div>
+          <div id="footer-copyright">
+            <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Lynch Dallas, 
+              P.C. Attorneys At Law. All Rights Reserved.
+               Web Application by <a href="https://www.informaticsinc.com/" target="_blank">Informatics, Inc</a> | 
+               <a href="#">Privacy Policy</a></p>
+          </div>
         </footer>
     </body>
 
-</html>>ml>>>>>>>>>>>>
+</html>
