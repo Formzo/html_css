@@ -1,41 +1,137 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Coles Resume">
-    <title>Coles Resume</title>
-    <link type="text/css" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" defer></script> 
-
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Cole's Resume" />
+  <title>Cole — Resume</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/942/942748.png" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    <header class="site-header">
-        <div class="logo">
-            <h1>My Resume</h1>
+  <header class="site-header">
+    <div class="logo">
+      <h1>My Resume</h1>
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero / Jumbotron (image placed on the right, top-cropped) -->
+    <section class="hero" id="home-hero" aria-label="Hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h2 class="hero-heading">Cole Chapman</h2>
+          <p class="hero-text">
+            "if your gonna do something, you wanna give it 110%"
+          </p>
+          <p>
+            <a class="btn primary" href="#projects">See Certifications</a>
+            <a class="btn ghost" href="#contact">Contact Me</a>
+          </p>
         </div>
 
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            ☰
-        </button>
+        <div class="hero-visual" aria-hidden="false">
+          <img
+            class="hero-photo"
+            src="images/imagesEDwfDrCgPh6Px36GHHbxG.jpeg.JPG"
+            alt="The one and only"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
 
-        <nav class="site-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Certifications</a></li>
+    <!-- About -->
+    <section class="about" id="about" aria-label="About">
+      <div class="about-left">
+        <h3>About Me</h3>
+        <p>PLACEHOLDER ABOUT ME.</p>
+        <p><a class="btn" href="resume.pdf">Download resume</a></p>
+      </div>
 
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+      <div class="about-right">
+        <h3>Skills</h3>
+        <ul class="skills">
+          <li>PLACEHOLDER 1</li>
+          <li>PLACEHOLDER 2</li>
+          <li>PLACEHOLDER 3</li>
+        </ul>
+        <p><a class="btn" href="#skills">Learn more</a></p>
+      </div>
+    </section>
 
-    <main>
-        <h2>Welcome</h2>
-        <p>This is the homepage content.</p>
-    </main>
-    
-    </body>
+    <!-- Projects -->
+    <section class="projects" id="projects" aria-label="Projects">
+      <div class="project">
+        <img class="project-thumb" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Certification badge and laptop" loading="lazy" />
+        <div class="project-copy">
+          <h3>Certifications</h3>
+          <p>PLACEHOLDE CERT</p>
+          <a class="btn" href="#certifications">View certifications</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img class="project-thumb" src="https://images.pexels.com/photos/29460500/pexels-photo-29460500.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Creative workspace with camera and notebook" loading="lazy" />
+        <div class="project-copy">
+          <h3>Hobbies</h3>
+          <p>PLACEHOLDER Hobbies</p>
+          <a class="btn" href="#hobbies">Learn more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact" aria-label="Contact">
+      <div class="contact-inner">
+        <h3>Contacts</h3>
+        <p>PLACEHOLDER Contacts</p>
+        <p>
+          <a class="btn primary" href="mailto:cole@example.com">Email me</a>
+          <a class="btn ghost" href="#contact-form">Contact form</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.site-nav');
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener('click', function () {
+        const isActive = nav.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      });
+
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A' && window.innerWidth < 768) {
+          nav.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('active')) {
+          nav.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+    });
+  </script>
+</body>
 </html>
