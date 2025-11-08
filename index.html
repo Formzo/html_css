@@ -62,7 +62,7 @@
       line-height:1;
     }
 
-    /* Mobile nav (hidden by default) */
+    /* Mobile nav */
     .site-nav{
       display:none;
       position:absolute;
@@ -78,12 +78,12 @@
     .site-nav li{border-bottom:1px solid #413f3f}
     .site-nav li:last-child{border-bottom:none}
     .site-nav a{
-      display:block;           /* stack vertically; prevents word spacing issues */
+      display:block;           
       padding:0.75rem 1rem;
       color:#fff;
       text-decoration:none;
-      white-space:nowrap;      /* keep words together */
-      letter-spacing:normal;   /* avoid stretched text */
+      white-space:nowrap;      
+      letter-spacing:normal;   
       word-spacing:normal;
     }
     .site-nav a:hover,.site-nav a:focus{background:#2f2e2e}
@@ -99,7 +99,7 @@
         width:auto;
       }
       .site-nav ul{
-        display:flex;           /* horizontal only on desktop */
+        display:flex;         
         gap:1rem;
         margin:0;
         padding:0;
@@ -365,7 +365,7 @@
         toggle.setAttribute("aria-expanded", (!expanded).toString());
       });
 
-      // Back-to-top visibility
+      // Back to top visibility
       window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
           toTop.classList.add("show");

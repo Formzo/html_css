@@ -52,7 +52,7 @@ main {
   line-height: 1;
 }
 
-/* Mobile nav hidden by default */
+/* Mobile nav */
 .site-nav {
   display: none;
   position: absolute;
