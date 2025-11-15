@@ -22,8 +22,15 @@
 
     /* Base */
     *{box-sizing:border-box}
-    html,body{height:100%}
+
+    /* --- THIS IS THE FIX --- */
+    html {
+      scroll-behavior: smooth; /* <-- TWEAK 1: Smooth scrolling added */
+    }
     body{
+      min-height: 100vh; /* <-- TWEAK 2: Fix for sticky header */
+    /* --- END OF FIX --- */
+
       margin:0;
       font-family:'Roboto', Arial, sans-serif;
       font-size:16px;
@@ -47,7 +54,7 @@
       background:#292525;
       color:#fff;
       padding:0.75rem 1rem;
-      position:sticky;
+      position:sticky; /* <-- Your code was already 100% correct here */
       top:0;
       z-index:9999;
     }
@@ -78,12 +85,12 @@
     .site-nav li{border-bottom:1px solid #413f3f}
     .site-nav li:last-child{border-bottom:none}
     .site-nav a{
-      display:block;           
+      display:block;        
       padding:0.75rem 1rem;
       color:#fff;
       text-decoration:none;
       white-space:nowrap;      
-      letter-spacing:normal;   
+      letter-spacing:normal;  
       word-spacing:normal;
     }
     .site-nav a:hover,.site-nav a:focus{background:#2f2e2e}
@@ -99,7 +106,7 @@
         width:auto;
       }
       .site-nav ul{
-        display:flex;         
+        display:flex;        
         gap:1rem;
         margin:0;
         padding:0;
@@ -117,13 +124,13 @@
       padding:2rem 1rem;
       box-shadow:0 6px 18px rgba(64,115,255,0.08);
     }
-    .hero-inner{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1rem;
-      align-items:center;
-      text-align:center;
-    }
+    .hero-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center; 
+    text-align: center;
+}
     .hero-copy{flex:1 1 300px; max-width:640px}
     .hero-heading{font-size:2rem;margin:0;font-weight:700}
     .hero-text{max-width:600px;margin:0 auto;color:rgba(255,255,255,0.95)}
@@ -254,7 +261,6 @@
   </style>
 </head>
 <body id="top">
-  <!-- Header -->
   <header class="site-header">
     <div class="logo">
       <h1>My Resume</h1>
@@ -271,7 +277,6 @@
   </header>
 
   <main>
-    <!-- Hero -->
     <section class="hero" id="home-hero" aria-label="Hero">
       <div class="hero-inner">
         <div class="hero-copy">
@@ -288,7 +293,6 @@
       </div>
     </section>
 
-    <!-- About -->
     <section class="about" id="about">
       <div class="about-left">
         <h3>About Me</h3>
@@ -305,7 +309,6 @@
       </div>
     </section>
 
-    <!-- Projects -->
     <section class="projects" id="projects">
       <div class="project">
         <img class="project-thumb" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Certification badge and laptop" />
@@ -327,7 +330,6 @@
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer" id="contact">
     <div class="footer-inner">
       <div class="footer-col">
@@ -340,7 +342,7 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>Email: <a href="mailto:c.chapman099@gmail.com">c.chapman099@gmail.com</a></p>
+        <p>Email: <a href="mailto:c.chapman099@gmail.com">c.chapman0j99@gmail.com</a></p>
         <p>Phone: (319) 929‑9975</p>
       </div>
     </div>
@@ -348,8 +350,7 @@
       <p>&copy; 2025 Cole Chapman. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- Back to Top Button -->
+  
   <a href="#top" id="to-top-link" aria-label="Back to top">↑</a>
 
   <script>
