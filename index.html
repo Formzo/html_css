@@ -23,13 +23,12 @@
     /* Base */
     *{box-sizing:border-box}
 
-    /* --- THIS IS THE FIX --- */
+    
     html {
-      scroll-behavior: smooth; /* <-- TWEAK 1: Smooth scrolling added */
+      scroll-behavior: smooth; 
     }
     body{
-      min-height: 100vh; /* <-- TWEAK 2: Fix for sticky header */
-    /* --- END OF FIX --- */
+      min-height: 100vh; 
 
       margin:0;
       font-family:'Roboto', Arial, sans-serif;
@@ -54,7 +53,7 @@
       background:#292525;
       color:#fff;
       padding:0.75rem 1rem;
-      position:sticky; /* <-- Your code was already 100% correct here */
+      position:sticky; 
       top:0;
       z-index:9999;
     }
