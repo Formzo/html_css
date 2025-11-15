@@ -23,13 +23,11 @@
     /* Base */
     *{box-sizing:border-box}
 
-    
     html {
       scroll-behavior: smooth; 
     }
     body{
       min-height: 100vh; 
-
       margin:0;
       font-family:'Roboto', Arial, sans-serif;
       font-size:16px;
@@ -53,7 +51,7 @@
       background:#292525;
       color:#fff;
       padding:0.75rem 1rem;
-      position:sticky; 
+      position:sticky;
       top:0;
       z-index:9999;
     }
@@ -124,12 +122,12 @@
       box-shadow:0 6px 18px rgba(64,115,255,0.08);
     }
     .hero-inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center; 
-    text-align: center;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center; 
+      text-align: center;
+    }
     .hero-copy{flex:1 1 300px; max-width:640px}
     .hero-heading{font-size:2rem;margin:0;font-weight:700}
     .hero-text{max-width:600px;margin:0 auto;color:rgba(255,255,255,0.95)}
@@ -257,6 +255,27 @@
     }
     #to-top-link.show{display:block}
     #to-top-link:hover{transform:scale(1.1)}
+
+    
+  
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-page: #1a1a1a;    
+        --panel: #2c2c2c;      
+        --text: #f5f5f5;       
+        --muted: #888888;
+      }
+      
+      .project, .about-left, .about-right, .contact-inner {
+          box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      }
+
+     
+      .skills {
+        color: var(--text); 
+      }
+    }
+
   </style>
 </head>
 <body id="top">
@@ -341,7 +360,7 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <p>Email: <a href="mailto:c.chapman099@gmail.com">c.chapman0j99@gmail.com</a></p>
+        <p>Email: <a href="mailto:c.chapman099@gmail.com">c.chapman099@gmail.com</a></p>
         <p>Phone: (319) 929‑9975</p>
       </div>
     </div>
