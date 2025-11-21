@@ -1,398 +1,91 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Cole's Resume" />
-  <title>Cole — Resume</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/942/942748.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --brand-1: #4073ff;
-      --brand-2: #21d4bc;
-      --bg-page: #fafafa;
-      --panel: #ffffff;
-      --muted: #666666;
-      --text: #111111;
-    }
-
-    /* Base */
-    *{box-sizing:border-box}
-
-    html {
-      scroll-behavior: smooth; 
-    }
-    body{
-      min-height: 100vh; 
-      margin:0;
-      font-family:'Roboto', Arial, sans-serif;
-      font-size:16px;
-      line-height:1.6;
-      color:var(--text);
-      background:var(--bg-page);
-    }
-
-    /* Container */
-    main{
-      max-width:1200px;
-      margin:0 auto;
-      padding:1rem;
-    }
-
-    /* Header */
-    .site-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:#292525;
-      color:#fff;
-      padding:0.75rem 1rem;
-      position:sticky;
-      top:0;
-      z-index:9999;
-    }
-    .logo h1{margin:0;font-size:1.5rem;font-weight:700}
-    .menu-toggle{
-      font-size:1.5rem;
-      background:none;
-      border:none;
-      color:#fff;
-      cursor:pointer;
-      padding:0.25rem;
-      line-height:1;
-    }
-
-    /* Mobile nav */
-    .site-nav{
-      display:none;
-      position:absolute;
-      top:100%;
-      right:0;
-      background:#353434;
-      width:220px;
-      border-radius:4px;
-      box-shadow:0 6px 18px rgba(0,0,0,0.12);
-    }
-    .site-nav.active{display:block}
-    .site-nav ul{list-style:none;margin:0;padding:0}
-    .site-nav li{border-bottom:1px solid #413f3f}
-    .site-nav li:last-child{border-bottom:none}
-    .site-nav a{
-      display:block;        
-      padding:0.75rem 1rem;
-      color:#fff;
-      text-decoration:none;
-      white-space:nowrap;      
-      letter-spacing:normal;  
-      word-spacing:normal;
-    }
-    .site-nav a:hover,.site-nav a:focus{background:#2f2e2e}
-
-    /* Desktop nav */
-    @media (min-width: 768px){
-      .menu-toggle{display:none}
-      .site-nav{
-        display:block;
-        position:static;
-        background:transparent;
-        box-shadow:none;
-        width:auto;
-      }
-      .site-nav ul{
-        display:flex;        
-        gap:1rem;
-        margin:0;
-        padding:0;
-      }
-      .site-nav li{border:none}
-      .site-nav a{padding:0.5rem; white-space:normal}
-    }
-
-    /* Hero */
-    .hero{
-      border-radius:10px;
-      background:linear-gradient(135deg,var(--brand-1),var(--brand-2));
-      color:#fff;
-      margin:1rem 0;
-      padding:2rem 1rem;
-      box-shadow:0 6px 18px rgba(64,115,255,0.08);
-    }
-    .hero-inner {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center; 
-      text-align: center;
-    }
-    .hero-copy{flex:1 1 300px; max-width:640px}
-    .hero-heading{font-size:2rem;margin:0;font-weight:700}
-    .hero-text{max-width:600px;margin:0 auto;color:rgba(255,255,255,0.95)}
-
-    /* Hero visual */
-    .hero-visual{
-      flex:1 1 220px;
-      max-width:420px;
-      margin-top:0.5rem;
-      display:block;
-      height:360px;
-      overflow:hidden;
-      border-radius:10px;
-      box-shadow:0 8px 24px rgba(16,24,40,0.12);
-    }
-    .hero-photo{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center 0%;
-      display:block;
-    }
-
-    /* Buttons */
-    .btn{
-      display:inline-block;
-      text-decoration:none;
-      padding:0.5em 0.8em;
-      border-radius:6px;
-      font-weight:700;
-      margin-right:0.5rem;
-      margin-top:0.5rem;
-      cursor:pointer;
-      border:none;
-      transition:transform .12s ease,box-shadow .12s ease;
-    }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(0,0,0,0.08)}
-    .btn.primary{background:#fff;color:var(--brand-1)}
-    .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18)}
-    .about .btn,.projects .btn,.contact .btn{background:var(--brand-1);color:#fff}
-
-    /* About */
-    .about{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1rem;
-      margin:2rem 0;
-    }
-    .about-left,.about-right{
-      flex:1 1 300px;
-      background:var(--panel);
-      padding:1rem;
-      border-radius:8px;
-      box-shadow:0 3px 10px rgba(16,24,40,0.03);
-    }
-    .skills{list-style:none;padding:0;margin:0;color:var(--muted)}
-    .skills li{padding:0.25rem 0}
-
-    /* Projects */
-    .projects{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1rem;
-      margin:2rem 0;
-    }
-    .project{
-      flex:1 1 300px;
-      background:var(--panel);
-      padding:1rem;
-      border-radius:8px;
-      box-shadow:0 3px 10px rgba(16,24,40,0.03);
-    }
-    .project-thumb{width:100%;height:200px;object-fit:cover;border-radius:6px;display:block;background:#f2f2f2}
-    .project-copy h3{font-size:1.25rem;margin:0.5rem 0;font-weight:700}
-
-    /* Footer */
-    .site-footer{
-      background:#292525;
-      color:#fff;
-      padding:2rem 1rem;
-      margin-top:2rem;
-      font-size:0.9rem;
-    }
-    .footer-inner{
-      display:flex;
-      flex-wrap:wrap;
-      gap:1.5rem;
-      max-width:1200px;
-      margin:0 auto;
-    }
-    .footer-col{flex:1 1 220px}
-    .footer-col h4{
-      margin-bottom:0.75rem;
-      font-size:1.1rem;
-      font-weight:700;
-      color:var(--brand-2);
-    }
-    .footer-col a{color:#ddd;text-decoration:none}
-    .footer-col a:hover{color:var(--brand-1)}
-    .footer-bottom{
-      text-align:center;
-      margin-top:2rem;
-      border-top:1px solid #444;
-      padding-top:1rem;
-      font-size:0.8rem;
-      color:#aaa;
-    }
-
-    /* Back-to-top button */
-    #to-top-link{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:linear-gradient(135deg,var(--brand-1),var(--brand-2));
-      color:#fff;
-      font-size:20px;
-      font-weight:bold;
-      text-decoration:none;
-      padding:0.75rem 1rem;
-      border-radius:50px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.25);
-      transition:transform 0.2s ease;
-      display:none;
-      z-index:9999;
-    }
-    #to-top-link.show{display:block}
-    #to-top-link:hover{transform:scale(1.1)}
-
-    
+$(document).ready(() => {
+  var currentFileArr = document.location.href.match(/[^\/]+$/);
+  var currentFile = currentFileArr != null ? currentFileArr[0] : "index.html";
   
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-page: #1a1a1a;    
-        --panel: #2c2c2c;      
-        --text: #f5f5f5;       
-        --muted: #888888;
-      }
-      
-      .project, .about-left, .about-right, .contact-inner {
-          box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      }
-
-     
-      .skills {
-        color: var(--text); 
-      }
-    }
-
-  </style>
-</head>
-<body id="top">
-  <header class="site-header">
-    <div class="logo">
-      <h1>My Resume</h1>
-    </div>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero" id="home-hero" aria-label="Hero">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h2 class="hero-heading">Cole Chapman</h2>
-          <p class="hero-text">"if your gonna do something, you wanna give it 110%"</p>
-          <p>
-            <a class="btn primary" href="#projects">See Certifications</a>
-            <a class="btn ghost" href="#contact">Contact Me</a>
-          </p>
-        </div>
-        <div class="hero-visual">
-          <img class="hero-photo" src="images/imagesEDwfDrCgPh6Px36GHHbxG.jpeg.JPG" alt="The one and only" />
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="about-left">
-        <h3>About Me</h3>
-        <p>In my free time, I am passionate about technology and staying physically active. I strive to be the best version of myself by continuously learning and improving both mentally and physically.</p>
-        <p><a class="btn" href="resume.pdf">Download resume</a></p>
-      </div>
-      <div class="about-right">
-        <h3>Skills</h3>
-        <ul class="skills">
-          <li>Learning about new Tech</li>
-          <li>Brainstorming ways to improve my IoT</li>
-          <li>Working with others</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="projects" id="projects">
-      <div class="project">
-        <img class="project-thumb" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80" alt="Certification badge and laptop" />
-        <div class="project-copy">
-          <h3>Certifications</h3>
-          <ul>
-            <li>AWS Cloud Practitioner</li>
-            <li>Cisco Networking 2 and 3</li>
-          </ul>
-        </div>
-      </div>
-      <div class="project">
-        <img class="project-thumb" src="https://images.pexels.com/photos/29460500/pexels-photo-29460500.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Creative workspace" />
-        <div class="project-copy">
-          <h3>Hobbies</h3>
-          <p>I enjoy researching emerging technologies and finding ways to improve the tech I already have. I also prioritize staying healthy by working out, biking, and meeting new people.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>Email: <a href="mailto:c.chapman099@gmail.com">c.chapman099@gmail.com</a></p>
-        <p>Phone: (319) 929‑9975</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Cole Chapman. All rights reserved.</p>
-    </div>
-  </footer>
-  
-  <a href="#top" id="to-top-link" aria-label="Back to top">↑</a>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".site-nav");
-      const toTop = document.getElementById("to-top-link");
-
-      // Mobile menu toggle
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        const expanded = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", (!expanded).toString());
+   // Display the header and footer consistently across all pages.
+   $('#header-placeholder').load('header.html', function() {
+      // This code handles the hamburger menu
+      const mobileNav = $('#mobile-nav');
+      const headerBottomNav = $('#header-bottom-nav');
+      mobileNav.click(() => {
+          headerBottomNav.toggle()
       });
 
-      // Back to top visibility
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          toTop.classList.add("show");
-        } else {
-          toTop.classList.remove("show");
-        }
+      // Close header-bottom-nav when a link is clicked
+      headerBottomNav.find('a').click(() => {
+          headerBottomNav.hide();
       });
-    });
-  </script>
-</body>
-</html>
+
+      $('#header-bottom-nav a').each(function() {
+          // Check if the link's href matches the current URL
+          if (currentFile.indexOf($(this).attr('href')) >= 0) {
+              // Add the 'active' class to the matching link
+              $(this).addClass('active');
+          }
+      });
+
+   });
+
+   $('#footer-placeholder').load('footer.html', function() {
+      $('#copyright-year').text(new Date().getFullYear());
+
+      // This code handles showing and hiding the go-to-top button.
+      // Source Google Gemini
+      // Get the link element
+      let toTopLink = document.getElementById("to-top-link");
+
+      // 1. Show/Hide button on scroll
+      window.onscroll = function() {
+          // A scroll threshold of 100px
+          let scrollThreshold = 100;
+
+          // Check both documentElement and body for cross-browser compatibility
+          if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+              // Using a class is cleaner than setting style.display directly
+              toTopLink.classList.add("show");
+          } else {
+              toTopLink.classList.remove("show");
+          }
+      };
+
+      // 2. Smooth scroll to top on click
+      toTopLink.onclick = function(event) {
+          // Prevent the default anchor behavior (#)
+          event.preventDefault();
+          
+          // Scroll smoothly to the top of the page
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      }
+   });
+   
+
+  
+
+
+  
+
+
+  // This code handles the light and dark mode favicon
+  const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const favicon = document.getElementById('favicon');
+
+  function updateFavicon(e) {
+      if (e.matches) {
+          // console.log("Dark mode");
+          favicon.href = "images/gavel-solid-light.svg";
+      } else {
+          // console.log("Light mode");
+          favicon.href = "images/gavel-solid.svg";
+      }
+  }
+
+  // Initial check
+  updateFavicon(darkModeMediaQuery);
+
+  // Listen for changes in color scheme preference
+  darkModeMediaQuery.addEventListener('change', updateFavicon);
+
+});
