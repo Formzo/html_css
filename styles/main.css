@@ -1,16 +1,18 @@
 /* Import Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* 1.  (Light Mode Default) */
 :root {
   --brand-1: #4073ff;
   --brand-2: #21d4bc;
-  --bg-page: #fafafa;       
-  --panel: #ffffff;        
-  --text: #111111;         
-  --muted: #666666;         
+  --bg-page: #fafafa;
+  --panel: #ffffff;
+  --text: #111111;
+  --muted: #666666;
   --shadow: rgba(16,24,40,0.03);
 }
 
+/* Base */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -22,6 +24,8 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg-page);
+  /* Smooth transition for colors */
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Container */
@@ -75,8 +79,6 @@ main {
   color: #fff;
   text-decoration: none;
   white-space: nowrap;
-  letter-spacing: normal;
-  word-spacing: normal;
 }
 .site-nav a:hover, .site-nav a:focus { background: #2f2e2e; }
 
@@ -161,6 +163,7 @@ main {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 3px 10px var(--shadow);
+  transition: background 0.3s ease;
 }
 
 .about {
@@ -195,6 +198,7 @@ main {
   padding: 2rem 1rem;
   margin-top: 2rem;
   font-size: 0.9rem;
+  transition: background 0.3s ease;
 }
 .footer-inner {
   display: flex;
@@ -242,11 +246,28 @@ main {
 #to-top-link:hover { transform: scale(1.1); }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg-page: #1a1a1a;   
-    --panel: #2c2c2c;      
-    --text: #f5f5f5;       
-    --muted: #888888;      
-    --shadow: rgba(0,0,0,0.2);
+  
+  /* 1. Selector */
+  body {
+    background: #1a1a1a;
+    color: #f5f5f5;
+  }
+
+  /* 2. Selector */
+  .about-left, 
+  .about-right, 
+  .project, 
+  .contact-inner {
+    background: #2c2c2c;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  }
+
+  /* 3. Selector */
+  .site-footer {
+    background: #000000;
+  }
+
+  .skills {
+    color: #f5f5f5;
   }
 }
