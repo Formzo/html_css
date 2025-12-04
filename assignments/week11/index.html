@@ -9,29 +9,191 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/webawesome.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="assignments/week11/folder./dresser-cropped.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
     <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/webawesome.loader.js"></script>
-    <body>
-    <header>
-      <div>
-      <img src="folder./dresser-cropped.jpg" alt="dresser-cropped">
-      </div>
-      <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
+    <style>
         :root {
             --light-gray: rgb(220, 220, 220);
             --dark-gray: rgb(50, 50, 50);
         }
-        .dresser-cropped {
-            display: flex; 
-            flex-direction: row; 
-            gap: 1rem;
-            align-items: right;
+
+        * {
+            box-sizing: border-box;
+            max-height: 100%;
+            padding: 0;
+            margin: 0;
+            max-width: 100%;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        #main-card-wrapper {
+            margin: 100px auto;
+            width: 700px;
+            height: 250px;
+            border-radius: 20px;
+            border: 2px solid #f3f0f0;
+            align-items: center;
+            display: flex;
+        }
+
+        #main-card-wrapper img {
+            border-radius: 20px;
+        }
+
+        #main-card-wrapper picture {
+        }
+
+        #text-content-area {
+            padding: 20px;
+            width: 55%;
+            height: 100%;
+        }
+
+        #image-showcase {
+            height: 100%;
+            width: 45%;
+        }
+
+        @media screen and (max-width: 725px) {
+            #main-card-wrapper {
+                margin: 200px auto;
+                height: 600px;
+                width: 300px;
+                flex-direction: column;
+                border: 2px solid #ccc;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+            }
+
+            #text-content-area {
+                height: fit-content;
+                width: 100%;
+                border-radius: 20px;
+                padding: 10px;
+            }
+
+            #image-showcase {
+                height: fit-content;
+                width: 100%;
+            }
+
+            .social-container {
+                gap: 20px;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                display: flex;
+            }
+
+            .profile-row {
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                display: flex;
+            }
+
+            .avatar-box img {
+                border-radius: 50%;
+                height: 100px;
+                width: 100px;
+            }
+
+            .details-column {
+                justify-content: center;
+                gap: 8px;
+                align-items: flex-start;
+                flex-direction: column;
+                display: flex;
+            }
+
+            .details-column h4 {
+                color: #555;
+                font-size: 2em;
+            }
+
+            .details-column a {
+                color: var(--dark-gray);
+                text-decoration: none;
+            }
+
+            .details-column a:hover {
+                color: var(--light-gray);
+                text-decoration: underline;
+            }
+
+            .links-group {
+                gap: 1rem;
+                flex-direction: row;
+                display: flex;
+            }
+
+            .social-btn {
+                cursor: pointer;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--light-gray);
+                height: 60px;
+                width: 60px;
+                display: flex;
+            }
+
+            .social-btn:hover {
+                background-color: var(--dark-gray);
+            }
+
+            .social-btn a {
+                text-decoration: none;
+            }
+
+            .social-btn i {
+                color: var(--dark-gray);
+            }
+
+            .social-btn i:hover {
+                color: var(--light-gray);
+            }
         }
     </style>
 </head>
 <body>
+    <div id="main-card-wrapper">
+        <div id="image-showcase">
+            <picture>
+                <source srcset="folder./dresser-cropped.jpg" media="(max-width:725px)">
+                <img src="folder./dresser-cropped.jpg" alt="dresser-desktop">
+            </picture>
+        </div>
+    </div>
+</body>
+</html>
+    <div class="user-social">
+        <div class="user-profile">
+            <div class="user-image">
+                <!-- Source: https://randomuser.me/-->
+                <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Random User Image">
+            </div>
+            <div class="user-info">
+                <h4>Jane Doe</h4>
+                <p><a href="mailto:jane.doe@example">jane.doe@example.com</a></p>
+            </div>
+        
+        </div>
+        <div class="share-icon">
+            
+            <wa-popover for="share-btn">
+                <div class="share-popover">
+                    <p>SHARE</p>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
+                    <a href="https://bsky.app" target="_blank"><i class="fa-brands fa-bluesky fa-xl"></i></a>
+                </div>
+            </wa-popover>
+            <i class="fa-solid fa-share fa-xl" id="share-btn"></i>
+        </div>
+    </div>
+</body>
+</html>
