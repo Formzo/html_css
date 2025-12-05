@@ -6,160 +6,206 @@
     <title>Week 11 assignment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/styles/webawesome.css">
     <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-beta.6/dist/webawesome.loader.js"></script>
+    
     <style>
         :root {
-            --light-gray: rgb(220, 220, 220);
-            --dark-gray: rgb(50, 50, 50);
+            --dark-blue: hsl(217, 19%, 35%);
+            --desaturated-blue: hsl(214, 17%, 51%);
+            --grayish-blue: hsl(212, 23%, 69%);
+            --light-grayish-blue: hsl(210, 46%, 95%);
         }
 
         * {
             box-sizing: border-box;
-            max-height: 100%;
-            padding: 0;
             margin: 0;
-            max-width: 100%;
+            padding: 0;
         }
 
         body {
-            font-family: "Montserrat", sans-serif;
+            font-family: "Manrope", "Montserrat", sans-serif;
+            background-color: var(--light-grayish-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
         #main-card-wrapper {
-            margin: 100px auto;
-            width: 700px;
-            height: 250px;
-            border-radius: 20px;
-            border: 2px solid #f3f0f0;
-            align-items: center;
+            background-color: white;
+            width: 730px;
+            height: 280px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             display: flex;
-        }
-
-        #main-card-wrapper img {
-            border-radius: 20px;
-        }
-
-        #main-card-wrapper picture {
-        }
-
-        #text-content-area {
-            padding: 20px;
-            width: 55%;
-            height: 100%;
+            margin: 20px;
+            overflow: visible; 
         }
 
         #image-showcase {
+            width: 40%;
             height: 100%;
-            width: 45%;
+            position: relative;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            overflow: hidden;
+        }
+
+        #image-showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        #text-content-area {
+            width: 60%;
+            padding: 32px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        p.description {
+            font-size: 0.82rem;
+            color: var(--desaturated-blue);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .author-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--dark-blue);
+            font-size: 0.85rem;
+        }
+
+        .post-date {
+            color: var(--grayish-blue);
+            font-size: 0.8rem;
+        }
+
+        .share-btn-container {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--light-grayish-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .share-btn-container:hover {
+            background-color: var(--desaturated-blue);
+        }
+
+        .share-btn-container i {
+            color: var(--desaturated-blue);
+            font-size: 0.9rem;
+        }
+
+        .share-btn-container:hover i {
+            color: white;
+        }
+
+        .share-popover {
+            background-color: var(--dark-blue);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        }
+
+        .share-popover p {
+            margin: 0;
+            letter-spacing: 5px;
+            color: var(--grayish-blue);
+            font-size: 0.8rem;
+        }
+
+        .share-popover a {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .share-popover i {
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        .share-popover i:hover {
+            transform: scale(1.2);
         }
 
         @media screen and (max-width: 725px) {
             #main-card-wrapper {
-                margin: 200px auto;
-                height: 600px;
-                width: 300px;
                 flex-direction: column;
-                border: 2px solid #ccc;
-                border-radius: 20px;
-                display: flex;
-                align-items: center;
-            }
-
-            #text-content-area {
-                height: fit-content;
-                width: 100%;
-                border-radius: 20px;
-                padding: 10px;
+                width: 330px;
+                height: auto;
+                border-radius: 10px;
+                overflow: hidden;
             }
 
             #image-showcase {
-                height: fit-content;
                 width: 100%;
+                height: 200px;
+                border-radius: 0;
             }
 
-            .social-container {
-                gap: 20px;
+            #text-content-area {
                 width: 100%;
-                align-items: center;
-                justify-content: space-between;
-                display: flex;
+                padding: 30px;
             }
 
-            .profile-row {
-                justify-content: center;
-                align-items: center;
-                flex-direction: row;
-                display: flex;
-            }
-
-            .avatar-box img {
-                border-radius: 50%;
-                height: 100px;
-                width: 100px;
-            }
-
-            .details-column {
-                justify-content: center;
-                gap: 8px;
-                align-items: flex-start;
-                flex-direction: column;
-                display: flex;
-            }
-
-            .details-column h4 {
-                color: #555;
-                font-size: 2em;
-            }
-
-            .details-column a {
-                color: var(--dark-gray);
-                text-decoration: none;
-            }
-
-            .details-column a:hover {
-                color: var(--light-gray);
-                text-decoration: underline;
-            }
-
-            .links-group {
-                gap: 1rem;
-                flex-direction: row;
-                display: flex;
-            }
-
-            .social-btn {
-                cursor: pointer;
-                border-radius: 50%;
-                align-items: center;
-                justify-content: center;
-                background-color: var(--light-gray);
-                height: 60px;
-                width: 60px;
-                display: flex;
-            }
-
-            .social-btn:hover {
-                background-color: var(--dark-gray);
-            }
-
-            .social-btn a {
-                text-decoration: none;
-            }
-
-            .social-btn i {
-                color: var(--dark-gray);
-            }
-
-            .social-btn i:hover {
-                color: var(--light-gray);
+            h2 {
+                font-size: 1rem;
             }
         }
     </style>
 </head>
 <body>
+
     <div id="main-card-wrapper">
         <div id="image-showcase">
             <picture>
@@ -167,33 +213,38 @@
                 <img src="folder./dresser-cropped.jpg" alt="dresser-desktop">
             </picture>
         </div>
-    </div>
-</body>
-</html>
-    <div class="user-social">
-        <div class="user-profile">
-            <div class="user-image">
-                <!-- Source: https://randomuser.me/-->
-                <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Random User Image">
-            </div>
-            <div class="user-info">
-                <h4>Jane Doe</h4>
-                <p><a href="mailto:jane.doe@example">jane.doe@example.com</a></p>
-            </div>
-        
-        </div>
-        <div class="share-icon">
+
+        <div id="text-content-area">
+            <h2>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h2>
             
-            <wa-popover for="share-btn">
-                <div class="share-popover">
-                    <p>SHARE</p>
-                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
-                    <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter fa-xl"></i></a>
-                    <a href="https://bsky.app" target="_blank"><i class="fa-brands fa-bluesky fa-xl"></i></a>
+            <p class="description">
+                Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some simple tips to help you make any room feel complete.
+            </p>
+
+            <div class="footer-row">
+                <div class="author-info">
+                    <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Michelle Appleton" class="author-img">
+                    <div class="author-text">
+                        <span class="author-name">Michelle Appleton</span>
+                        <span class="post-date">28 Jun 2020</span>
+                    </div>
                 </div>
-            </wa-popover>
-            <i class="fa-solid fa-share fa-xl" id="share-btn"></i>
+
+                <wa-popover for="share-btn" placement="top">
+                    <div class="share-popover">
+                        <p>SHARE</p>
+                        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                        <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                        <a href="https://bsky.app" target="_blank"><i class="fa-brands fa-bluesky fa-lg"></i></a>
+                    </div>
+                </wa-popover>
+
+                <div class="share-btn-container" id="share-btn">
+                    <i class="fa-solid fa-share"></i>
+                </div>
+            </div>
         </div>
     </div>
+
 </body>
 </html>
