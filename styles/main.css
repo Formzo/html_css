@@ -1,7 +1,7 @@
 /* Import Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* 1.  (Light Mode Default) */
+/* 1. (Light Mode Default) */
 :root {
   --brand-1: #4073ff;
   --brand-2: #21d4bc;
@@ -24,7 +24,6 @@ body {
   line-height: 1.6;
   color: var(--text);
   background: var(--bg-page);
-  /* Smooth transition for colors */
   transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -246,73 +245,20 @@ main {
 #to-top-link:hover { transform: scale(1.1); }
 
 @media (prefers-color-scheme: dark) {
-  
-  /* 1. Selector */
-  body {
-    background: #1a1a1a;
-    color: #f5f5f5;
-  }
-
-  /* 2. Selector */
-  .about-left, 
-  .about-right, 
-  .project, 
-  .contact-inner {
+ 
+  body { background: #1a1a1a; color: #f5f5f5; }
+ 
+  .about-left, .about-right, .project, .contact-inner {
     background: #2c2c2c;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
   }
-
-  /* 3. Selector */
-  .site-footer {
-    background: #000000;
-  }
-
-  .skills {
-    color: #f5f5f5;
-  }
-}
-/* --- DATA TABLE THEME STYLES --- */
-.data-table-container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  overflow-x: auto;
+ 
+  .site-footer { background: #000000; }
+  .skills { color: #f5f5f5; }
 }
 
-.data-table {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  overflow: hidden; /* Rounds the corners of the table */
-}
-
-.data-table table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 600px; /* Prevents squishing on phone */
-}
-
-.data-table th {
-  background-color: var(--brand-1, #4073ff); /* Uses your brand blue */
-  color: white;
-  padding: 15px 20px;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-.data-table td {
-  padding: 15px 20px;
-  border-bottom: 1px solid #eee;
-  color: var(--text, #333);
-}
-
-/* Zebra Striping for readability */
-.data-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.data-table tbody tr:hover {
-  background-color: #f0f7ff; /* Light blue hover effect */
+.site-nav a.current-page {
+  color: var(--brand-2, #21d4bc); 
+  border-bottom: 2px solid var(--brand-2, #21d4bc);
+  font-weight: bold;
 }

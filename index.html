@@ -6,26 +6,15 @@
   <meta name="description" content="Cole's Resume" />
   <title>Cole — Resume</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/942/942748.png" />
+  
+  <link rel="stylesheet" href="styles/main.css">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/main.css">
 </head>
 <body id="top">
-  <header class="site-header">
-    <div class="logo">
-      <h1>My Resume</h1>
-    </div>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="site-nav" aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+
+  <div id="header-placeholder"></div>
 
   <main>
     <section class="hero" id="home-hero" aria-label="Hero">
@@ -81,51 +70,39 @@
     </section>
   </main>
 
-  <footer class="site-footer" id="contact">
-    <div class="footer-inner">
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Certifications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p>Email: <a href="mailto:c.chapman099@gmail.com">c.chapman099@gmail.com</a></p>
-        <p>Phone: (319) 929‑9975</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Cole Chapman. All rights reserved.</p>
-    </div>
-  </footer>
-  
-  <a href="#top" id="to-top-link" aria-label="Back to top">↑</a>
+  <div id="footer-placeholder"></div>
+
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector(".site-nav");
-      const toTop = document.getElementById("to-top-link");
+    // Used the help of Gemini AI with this code to make everything work
+    async function loadComponent(url, placeholderId) {
+        const response = await fetch(url);
+        const data = await response.text();
+        const placeholder = document.getElementById(placeholderId);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        
+        placeholder.replaceWith(...tempDiv.children);
+    }
 
-      // Mobile menu toggle
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("active");
-        const expanded = toggle.getAttribute("aria-expanded") === "true";
-        toggle.setAttribute("aria-expanded", (!expanded).toString());
-      });
+    async function initPage() {
+        
+        await loadComponent('header.html', 'header-placeholder');
+        await loadComponent('footer.html', 'footer-placeholder');
 
-      // Back to top visibility
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          toTop.classList.add("show");
-        } else {
-          toTop.classList.remove("show");
-        }
-      });
-    });
+       
+        const script = document.createElement('script');
+        script.src = "script.js";
+        script.onload = () => {
+            
+            if (typeof initSiteInteractions === "function") {
+                initSiteInteractions();
+            }
+        };
+        document.body.appendChild(script);
+    }
+
+    initPage();
   </script>
 </body>
 </html>
