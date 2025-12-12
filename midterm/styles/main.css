@@ -1,53 +1,40 @@
+:root{
+--GrayDark: hsl(270, 9%, 17%);
+--GrayMedium: hsl(273, 4%, 51%);
+--GrayLight: hsl(0, 0%, 98%);
+}
 * {
     max-width: 100%;
-    max-height: 100%;
     box-sizing: border-box;
 }
 
-:root {
-    --red: hsl(356, 77%, 49%);
-    --red-light:  #fafafa(208, 49%, 24%);
-    --blue-dark: hsl(210, 22%, 87%);
-    --gray-light: hsl(207, 13%, 80%);
-    --gray-medium: hsl(207, 13%, 34%);
-    --gray-dark: hsl(240, 10%, 16%);
-    --gradient1: linear-gradient(to right, hsl(13, 100%, 72%), hsl(353, 100%, 62%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    --gradient2: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 31%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-body {
-    font-family: "Overpass", serif;
+body{
+    font-family: "DM Serif Display", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Ubuntu", serif;
-    font-weight: 700;
-    font-style: normal;
+#mobile-nav{
+    display:inline-block;
+    padding: 3px;
+    align-content:end;
+    border: solid black 2px;
 }
-
-header {
-    background-image: var;
-    border-radius: 0 0 0 100px;
-}
-
 #header-mobile-nav {
-    padding: 16px 16px 8px;
-    display: flex; /* Places the contact button and mobile nav on same horizontal line */
-    justify-content: space-between; /* Places the contact button on left and mobile navigation on right */
-    align-items: center; /* Vertically centers the contact button with the mobile navigation */
+    padding: 24px 16px 16px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
 }
 
 #mobile-nav {
-    color: rgb(26, 25, 25);
-    font-size: 2em; /* Makes the navigation icon bigger */
-    margin: 0 0.25em; /* Adds space to the left/right of the mobile nav */
+    font-size: 1em; 
+    margin: 0 0.25em; 
     cursor: pointer;
 }
 
 #header-bottom-nav {
-    background-color: rgb(13, 12, 12);
+    background-color: var(--GrayDark);
     position: absolute;
     top: 70px;
     left: 0;
@@ -55,118 +42,164 @@ header {
     width: 100%;
 }
 
-#header-bottom-nav li {
-    border-bottom: 1px solid rgb(18, 18, 18);
-}
-
 #header-bottom-nav a {
-    font-size: 1.2em; /* Increases font-size 20% */
-    display: block; /* A tags are inline elements by default. Making this a block allows you to add top/bottom padding and margin, and makes it full width */
+    font-size: 1.2em;
+    display: block;
     padding: 20px;
     text-decoration:none;
-    color: var rgb(14, 13, 13);
+    color: white;
     font-weight: 700;
+    text-align: center;
+    border: solid var(--GrayDark) 2px;
 }
 
 #header-bottom-nav .active, #header-bottom-nav a:hover {
-    color: var rgb(19, 19, 19);
+    border: solid white 2px;
 }
-
-#jumbotron {
+#jumbotron-text {
     padding: 100px 40px;
     text-align: center;
-    color: rgb(14, 14, 14);
+    background-color: var(--GrayDark);
+    color: white;
 }
-#jumbotron h1 {
+#jumbotron-text h1 {
     font-size: 2.5em;
     line-height: 1.2em;
     font-weight: 500;
     margin: 30px 0;
 }
-
-#jumbotron p {
+#jumbotron-text h2 {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+}
+#jumbotron-text p {
     font-size: 1.4em;
     line-height: 1.4em;
     font-weight: 300;
     margin: 30px 0;
 }
-
+#family{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
 .btn {
     padding: 12px 24px 10px;
-    border: 2px solid rgb(22, 21, 21);
-    border-radius: 50px;
-    color: rgb(6, 6, 6);
+    border: 2px solid white;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
-
-.btn-filled {
-    background-color: rgb(27, 26, 26);
-    color: rgb(249, 239, 239)
+main {
+    padding: 0 40px 50px;
+    text-align: center;
+    background-color: white;
+    color: white;
 }
-
-
+main h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+    color: var(--GrayDark);
+}
+main h2 {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+    color: var(--GrayDark);
+}
+main p {
+    font-size: 1em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin: 30px 0;
+    color: var(--GrayMedium);
+}
+#about {
+    margin: 0 auto 50px;
+    text-align: center;
+    background-color: var(--GrayDark);
+    color: white;
+    width: 90%;
+    height: 100%;
+    padding-bottom: 2em;
+    padding: 50px 0 80px;
+}
+#about h1 {
+    font-size: 2.5em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+}
+#about h2 {
+    font-size: 1.7em;
+    line-height: 1.2em;
+    font-weight: 500;
+    margin: 30px 0;
+}
+#about p {
+    font-size: 1.4em;
+    line-height: 1.4em;
+    font-weight: 300;
+    margin: 30px 0;
+}
 footer {
-    background-color: var(--gray-dark);
+    background-color: var(--GrayLight);
     text-align: center;
     padding: 100px 40px;
-    border-radius: 0 100px 0 0;
 }
 
 footer h3 {
-    color: white;
+    color: var(--GrayDark);
     margin: 20px 0;
 }
 
 footer a {
-    color: var(--gray-light);
+    color: var(--GrayMedium);
     text-decoration: none;
     padding: 5px;
     display: inline-block;
 }
-
 footer a:hover {
     text-decoration: underline;
 }
-
-main {
-    text-align: center;
-    padding: 100px 50px;
+.logo{
+    margin: 7px;
+    color: var(--Graydark)
+}
+.line{
+    border-bottom: 1px solid var(--GrayMedium);
+    display:flex;
+    margin: 50px 0;
 }
 
-main h2 {
-    font-size: 2em;
-    line-height: 1.2em;
-    font-weight: 500;
-    margin: 40px 0;
-    color: var(--gray-dark);
+@media only screen and (min-width: 768px) {
+    
+    #footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px; 
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    #footer-bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px; 
+    }
 }
 
-main p {
-    color: var(--gray-medium);
-    font-size: 1.2em;
-    line-height: 1.6em;
-    font-weight: 300;
-    margin: 20px 0;
-}
-
-#infrastructure {
-    background-color: var(--gray-dark);
-    margin: 0 -50px;
-    width: 100
-}
-
-#infrastructure h2, #infrastructure p {
-    color: white;
-}
-.family-photo{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center 0%; 
-    display:block;
-}
-#jumbotron-text {
-    background-image: url(https://www.lynchdallas.com/application/themes/lynchdallas/img/bkg-pattern.jpg);
-    padding: 1.5em;
+@media only screen and (min-width: 1024px) {
+    
+    #footer-bottom {
+        grid-template-columns: repeat(4, 1fr); 
+    }
 }

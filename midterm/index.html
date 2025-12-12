@@ -2,121 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link type="text/css" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
-  <title>Cole Chapman | Insure</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: rgb(239, 227, 227); text-decoration: none; }
-    .attribution a:hover { text-decoration: underline; }
-  </style>
-
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script defer src="scripts/main.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="scripts/main.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=DM+Serif+Display:ital@0;1&family=Overpass:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Insure landing page</title>
 </head>
-<body>
-  <header>
-    <div
-        <nav id="header-mobile-nav">
-            <div id="header-logo">
-              <a href="#">
-                <img src="images/logo.svg"
-                alt="Insure Logo">
-              </a>
-            </div>
-            <div
-            id="mobile-nav"><i class="fa-solid fa-bars"></i></div>
-        </nav>
-        <nav id="header-bottom-nav" style="display: none">
-        <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Company</a></li>
-            <li><a href="#">Connect</a></li>
-        </ul>
-        </nav>
+  <body>
+    <header>
+      <div id="header-grid">
+          <nav id="header-mobile-nav">
+              <div id="header-logo">
+                <a href="#">
+                  <img src="images/logo.svg" alt="Insure SVG Logo">
+                </a>
+              </div>
+              <div id="mobile-nav"><i class="fa-solid fa-bars"></i></div>
+          </nav>
+          <nav id="header-bottom-nav" style="display: none">
+            <ul>
+                <li><a href="#">HOW WE WORK</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">ACCOUNT</a></li>
+                <li><a href="#">VIEW PLANS</a></li>
+            </ul>
+          </nav>
+      </div>
+
+      <div id="jumbotron">
+        <div id="jumbotron-image">
+          <img id="family" src="images/image-intro-mobile.jpg" alt="picture of family">
+        </div>
+        <div id="jumbotron-text">
+          <h1>Humanizing your insurance</h1>
+          <p>Get your life insurance coverage easier and faster. We blend our expertise 
+            and technology to help you find the plan that's right for you. Ensure you 
+            and your loved ones are protected.</p>
+          <a href="#" class="btn">View plans</a>
+        </div>
+      </div>
+    </header>
+
+    <p class="line"></p>
+
+    <main>
+      <h1>We're different</h1>
+
+      <div id="cards">
+        <article>
+          <img src="images/icon-snappy-process.svg" alt="snappy process">
+          <h2>Snappy Process</h2>
+          <p>Our application process can be completed in minutes, not hours. Don't get stuck filling in tedious forms.</p>
+        </article>
+      
+        <article>
+          <img src="images/icon-affordable-prices.svg" alt="affordable prices">
+          <h2>Affordable Prices</h2>
+          <p>We don't want you worrying about high monthly costs. Our prices may be low, but we still offer the best coverage possible.</p>
+        </article>
+
+        <article>
+          <img src="images/icon-people-first.svg" alt="people first icon">
+          <h2>People First</h2>
+          <p>Our plans aren't full of conditions and clauses to prevent payouts. We make sure you're covered when you need it.</p>
+        </article>
+      </div>
+
+    </main>
+
+    <div id="about">
+      <h1>Find out more about how we work</h1>
+      <a href="#" class="btn">How we work</a>
     </div>
-    <img src="images/image-intro-mobile.jpg" alt="The front of the Dallas Lynch office building">
-    </div>
-    <div
-     id="jumbotron">
-      <h1>Humanizing your insurance.</h1>
-      <p>Get your life insurance coverage easier and faster. We blend our expertise and technology to help you find the plan that's right for you. Ensure you and your loved ones are protected.</p>
 
-      <a href="#" class="btn">VIEW PLANS</a>
-    </div>
+    <footer>
+      <div id="footer-top">
+        <img src="images/logo.svg" alt="Insure SVG Logo">
+        <div id="social">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <p class="line"></p>
 
-  </header>
+      <div id="footer-bottom">
+        <div class="col">
+          <h3>Our company</h3>
+          <ul>
+            <li><a href="#">How we work</a></li>
+            <li><a href="#">Why Insure?</a></li>
+            <li><a href="#">View plans</a></li>
+            <li><a href="#">Reviews</a></li>
+          </ul>
+        </div>
 
-  <main>
+        <div class="col">
+          <h3>Help me</h3>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
 
-  <h2>We're Diffrent</h2>
-  
+        <div class="col">
+          <h3>Contact</h3>
+          <ul>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Live chat</a></li>
+          </ul>
+        </div>
 
-  <h2>Introducing an extensible editor</h2>
-  <p>Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
-  The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
-  videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
-  change the looks of a blog.</p>
-
-  <h2>Robust content management</h2>
-  <p>Flexible content management enables users to easily move through posts. Increase the usability of your blog 
-  by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.</p>
-
-  <!-- <div id="infrastructure">
-    <img src="images/illustration-phones.svg" alt="Two cellphone graphics with Blogr logo">
-    <h2>State of the Art Infrastructure</h2>
-    <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
-    This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
-  </div> -->
-
-  <h2>Free, open, simple</h2>
-  <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports 
-  features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
-  and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.</p>
-
-  <h2>Powerful tooling</h2>
-  <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
-  capable of producing even the most complicated sites.</p>
-
-  </main>
-
-  <footer>
-    <img src="images/logo.svg" alt="Blogr Logo">
-    <h3>Product</h3>
-    <ul>
-      <li><a href="#">Overview</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Marketplace</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Integrations</a></li>
-    </ul>
-    <h3>Company</h3>
-    <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Team</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Careers</a></li>
-    </ul>
-    <h3>Connect</h3>
-    <ul>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">Newsletter</a></li>
-      <li><a href="#">LinkedIn</a></li>
-    </ul>
-  </footer>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Cole Chapman</a>.
-  </div>
-</body>
+        <div class="col">
+          <h3>Others</h3>
+          <ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Licenses</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
