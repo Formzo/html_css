@@ -2,13 +2,20 @@
   <div class="logo">
     <h1>My Resume</h1>
   </div>
-  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="this.nextElementSibling.classList.toggle('active')">
+      ☰
+  </button>
+  
   <nav class="site-nav" aria-label="Primary">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Certifications</a></li>
-      <li><a href="#contact">Contact</a></li>
+      
+      <li><a href="accomplishments.html">Accomplishments</a></li>
+      
+      <li><a href="hobbies.html">Hobbies</a></li>
+      
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </nav>
 </header>

@@ -245,14 +245,20 @@ main {
 #to-top-link:hover { transform: scale(1.1); }
 
 @media (prefers-color-scheme: dark) {
-  /* 1. Selector */
+ 
   body { background: #1a1a1a; color: #f5f5f5; }
-  /* 2. Selector */
+ 
   .about-left, .about-right, .project, .contact-inner {
     background: #2c2c2c;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
   }
-  /* 3. Selector */
+ 
   .site-footer { background: #000000; }
   .skills { color: #f5f5f5; }
+}
+
+.site-nav a.current-page {
+  color: var(--brand-2, #21d4bc); 
+  border-bottom: 2px solid var(--brand-2, #21d4bc);
+  font-weight: bold;
 }
